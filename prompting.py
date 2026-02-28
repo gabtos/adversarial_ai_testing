@@ -1,0 +1,31 @@
+import json
+from ollama import chat
+
+# # remember to run 'brew services start ollama' 
+# # then run 'ollama run llama3.2' in a separate terminal 
+
+# print('testing')
+# response = chat(model='llama3.2', messages=[
+#     {
+#         'role': 'user',
+#         'content': 'Why is the sky blue?',
+#     },
+# ])
+# print(response.message.content)
+
+
+with open('vt_prompts.json', 'r') as f:
+    prompts = json.load(f)
+
+
+    for prompt in prompts['prompts']:
+        
+        response = chat(model='llama3.2', messages=[
+            {
+                'role': 'user',
+                'content': prompt['prompt'],
+            },
+        ])
+        print(response.message.content)
+
+
