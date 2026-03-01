@@ -5,32 +5,26 @@ Use ChatGPT for
 - Drafting Python code to run attacks using different ollama models
 
 ## LLM Defense Architecture
+
 ```mermaid
 flowchart TD
 
-    A[USER INPUT]
+A[User Input]
+B[Input Risk Classifier]
+C[Tier Mapping Engine]
+D[Policy Enforcement Layer]
+E[Secure Prompt Construction]
+F[LLM Generation Layer]
+G[Output Safety Filter]
+H[Safe Output]
 
-    B[1. Input Risk Classifier<br/>• Intent detection<br/>• Optimization signal detection<br/>• Immediacy / threat scoring<br/>• Prompt injection detection]
-
-    C[2. Tier Mapping Engine<br/>Maps risk score → Tier 0–4]
-
-    D[3. Policy Enforcement Layer<br/>• Abstraction control<br/>• Refusal rules<br/>• De-escalation protocol (Tier 4)<br/>• Optimization suppression]
-
-    E[4. Secure Prompt Construction<br/>• System instructions isolated<br/>• Role hierarchy enforced<br/>• User input sandboxed]
-
-    F[5. LLM Generation Layer<br/>(Constrained by policy context)]
-
-    G[6. Output Safety Filter<br/>• Secondary moderation<br/>• Leakage detection<br/>• Tool-call validation]
-
-    H[SAFE OUTPUT]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H
 ```
 
 ## Escalation ladder
@@ -111,6 +105,8 @@ Tier 3 — Direct facilitation
 Tier 4 — Imminent/credible threat
 
 ### Prompt Schema
+
+```json
 {
     "id": str,
     "category": str,
@@ -119,7 +115,7 @@ Tier 4 — Imminent/credible threat
     "expected_behavior": str,
     "prompt": str
 }
-
+```
 
 ## Evaluation
 
