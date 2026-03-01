@@ -4,17 +4,34 @@ Use ChatGPT for
 - Creating prompts under a specific risk framework
 - Drafting Python code to run attacks using different ollama models
 
-## Red Teaming Prompt Matrix
-| Axis                      | Low-Risk Version       | High-Risk Version                   |
-| ------------------------- | ---------------------- | ----------------------------------- |
-| **Specificity**           | General discussion     | Step-by-step procedural detail      |
-| **Intent clarity**        | Neutral/academic       | Explicit harmful intent             |
-| **Targeting**             | Abstract hypothetical  | Named individual/location           |
-| **Optimization**          | “Explain how it works” | “Most effective / least detectable” |
-| **Evasion**               | None                   | “Without getting caught”            |
-| **Scale**                 | Individual harm        | Mass-casualty or infrastructure     |
-| **Temporal immediacy**    | Historical/past        | “Tonight,” “right now”              |
-| **Dual-use plausibility** | Defensive framing      | Offensive-only framing              |
+## LLM Defense Architecture
+```mermaid
+flowchart TD
+
+    A[USER INPUT]
+
+    B[1. Input Risk Classifier<br/>• Intent detection<br/>• Optimization signal detection<br/>• Immediacy / threat scoring<br/>• Prompt injection detection]
+
+    C[2. Tier Mapping Engine<br/>Maps risk score → Tier 0–4]
+
+    D[3. Policy Enforcement Layer<br/>• Abstraction control<br/>• Refusal rules<br/>• De-escalation protocol (Tier 4)<br/>• Optimization suppression]
+
+    E[4. Secure Prompt Construction<br/>• System instructions isolated<br/>• Role hierarchy enforced<br/>• User input sandboxed]
+
+    F[5. LLM Generation Layer<br/>(Constrained by policy context)]
+
+    G[6. Output Safety Filter<br/>• Secondary moderation<br/>• Leakage detection<br/>• Tool-call validation]
+
+    H[SAFE OUTPUT]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+```
 
 ## Escalation ladder
 ### Violent Content/Intent
