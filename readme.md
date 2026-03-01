@@ -7,7 +7,7 @@ Use ChatGPT for
 ## LLM Defense Architecture
 
 ```mermaid
-flowchart TD
+flowchart LR
 
 A[User Input]
 B[Input Risk Classifier]
