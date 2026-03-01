@@ -148,18 +148,20 @@ def evaluate_prompt_file(json_path: str, output_path: str = None):
 
 
 def main():
-    eval_file = "results/tiered_prompts_llama3.2_2026-03-01_16-48-48_UTC.json"
-    output_file = "evaluated_results/tiered_prompts_llama3.2_2026-03-01_16-48-48_EVALUATED.json"
-    print(f'Evaluating {eval_file}')
-    evaluate_prompt_file(eval_file, output_file)
+    # eval_file = "results/tiered_prompts_llama3.2_2026-03-01_16-48-48_UTC.json"
+    # output_file = "evaluated_results/tiered_prompts_llama3.2_2026-03-01_16-48-48_EVALUATED.json"
+    # print(f'Evaluating {eval_file}')
+    # evaluate_prompt_file(eval_file, output_file)
 
 
 
-    # safe results
-    eval_file = "safe_results/tiered_prompts_llama3.2_2026-03-01_17-40-40_UTC.json"
-    output_file = "evaluated_results/tiered_prompts_llama3.2_2026-03-01_17-40-40_UTC_EVALUATED.json"
-    print(f'Evaluating {eval_file}')
-    evaluate_prompt_file(eval_file, output_file)
+    # # safe results
+    # eval_file = "safe_results/tiered_prompts_llama3.2_2026-03-01_17-40-40_UTC.json"
+    # output_file = "evaluated_results/tiered_prompts_llama3.2_2026-03-01_17-40-40_UTC_EVALUATED.json"
+    # print(f'Evaluating {eval_file}')
+    # evaluate_prompt_file(eval_file, output_file)
 
+    
+    pass
 if __name__ == '__main__':
     main()

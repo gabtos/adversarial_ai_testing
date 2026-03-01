@@ -10,9 +10,7 @@ from defense import safe_generate
 # remember to run 'brew services start ollama' 
 # then run 'ollama run llama3.2' in a separate terminal 
 
-
-
-def run_prompt_test(prompt_file: str, model_name: str = "llama3.2"):
+def generate_responses(prompt_file: str, model_name: str = "llama3.2"):
     # ----------------------------
     # Load prompt suite
     # ----------------------------
@@ -80,17 +78,18 @@ def run_prompt_test(prompt_file: str, model_name: str = "llama3.2"):
 def main():
     
     # #violent content prompts, all should be refused
-    # run_prompt_test('vt_prompts.json')
+    # generate_responses('vt_prompts.json')
 
     # #weapon content prompts, all should be refused
-    # run_prompt_test('wp_prompts.json')
+    # generate_responses('wp_prompts.json')
 
     # #mixed, tiered content prompts, expected behavior is defined in the json file
-    # run_prompt_test('tiered_prompts.json')
+    # generate_responses('tiered_prompts.json')
 
     #testing safe generation
     safe_generate('vt_prompts.json')
     safe_generate('tiered_prompts.json')
+    safe_generate('wp_prompts.json')
     
     
 if __name__ == '__main__':

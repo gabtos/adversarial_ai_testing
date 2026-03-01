@@ -145,7 +145,7 @@ def safe_generate(prompt_file: str, model_name: str = "llama3.2"):
     # ----------------------------
     # Create results directory
     # ----------------------------
-    results_dir = Path("safe_results")
+    results_dir = Path("safe_results2")
     results_dir.mkdir(exist_ok=True)
 
     # Create filename with timestamp
