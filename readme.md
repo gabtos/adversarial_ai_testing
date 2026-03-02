@@ -19,23 +19,25 @@ Run the Python script to evaluate the prompts:
 
 ```mermaid
 flowchart LR
-
-A[User Input]
-B[Input Risk Classifier]
-C[Tier Mapping Engine]
-D[Policy Enforcement Layer]
-E[Secure Prompt Construction]
-F[LLM Generation Layer]
-G[Output Safety Filter]
-H[Safe Output]
-
-A --> B
-B --> C
-C --> D
-D --> E
-E --> F
-F --> G
-G --> H
+ subgraph subGraph0["Policy Enforcement"]
+        G["Refuse"]
+        F["High level only"]
+        E["Answer normally"]
+  end
+ subgraph Output["Output"]
+        P["Predefined response"]
+        N["Generate response"]
+  end
+    A["User Input"] --> B["Input Risk Classifier"]
+    B --> C("Risk 0") & D("Risk 2") & J("Risk 3-4")
+    C --> E
+    D --> F
+    J --> G
+    F --> P
+    G --> P
+    E --> N
+  
+   Output --> Z{"Evaluate"}
 ```
 
 ## Escalation ladder
