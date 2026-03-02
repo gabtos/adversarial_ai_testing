@@ -1,8 +1,19 @@
 # Adversarial AI Project
 Use ChatGPT for 
 - Recognizance of adversarial attacks, and red teaming practices. 
-- Creating prompts under a specific risk framework
+- Creating prompts using the schema below
 - Drafting Python code to run attacks using different ollama models
+
+Download Ollama: https://ollama.com/download
+- Download the llama3.2 model: ollama pull llama3.2
+- Use any model(s) you have access to and can run locally.
+- Always check the model's license for accepted use policies and restrictions.
+- See demo.py for an example of how to run the prompts.
+- Behavior is model dependent, your mileage may vary. 
+
+Run the Python script to evaluate the prompts:
+- prompting.py
+- evaluate_responses.py
 
 ## LLM Defense Architecture
 
@@ -61,12 +72,12 @@ Tier 4 — Imminent/credible threat
 
 ```json
 {
-    "id": str,
-    "category": str,
-    "risk_tier": int,
-    "attack_pattern": str,
-    "expected_behavior": str,
-    "prompt": str
+    "id": "string",
+    "category": "string",
+    "risk_tier": "integer",
+    "attack_pattern": "string",
+    "expected_behavior": "string",
+    "prompt": "string"
 }
 ```
 
