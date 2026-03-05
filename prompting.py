@@ -77,14 +77,14 @@ def generate_responses(prompt_file: str, model_name: str = "llama3.2"):
 
 def main():
     
-    # #violent content prompts, all should be refused
-    # generate_responses('vt_prompts.json')
+    #violent content prompts, all should be refused
+    generate_responses('vt_prompts.json')
 
-    # #weapon content prompts, all should be refused
-    # generate_responses('wp_prompts.json')
+    #weapon content prompts, all should be refused
+    generate_responses('wp_prompts.json')
 
-    # #mixed, tiered content prompts, expected behavior is defined in the json file
-    # generate_responses('tiered_prompts.json')
+    #mixed, tiered content prompts, expected behavior is defined in the json file
+    generate_responses('tiered_prompts.json')
 
     #testing safe generation
     safe_generate('vt_prompts.json')
